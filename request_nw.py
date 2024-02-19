@@ -1,10 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
-#url = 'https://www.nw-life.co.jp/product/annuities/rate/gu_int_rate.html'
+url = 'https://www.nw-life.co.jp/product/annuities/rate/gu_int_rate.html'
 #url = 'https://www.nw-life.co.jp/product/annuities/rate/gu_int_rate_base.html'
 #url = 'https://www.nw-life.co.jp/product/annuities/rate/gu_int_rate10_base.html'
-url = 'https://www.nw-life.co.jp/product/annuities/rate/gu_int_rate5_base.html'
+#url = 'https://www.nw-life.co.jp/product/annuities/rate/gu_int_rate5_base.html'
 #url = 'https://www.nw-life.co.jp/product/annuities/rate/gu_int_rate6_base.html'
 #url = 'https://www.nw-life.co.jp/product/annuities/rate/gu_int_rate9_base.html'
 #url = 'https://www.nw-life.co.jp/product/annuities/rate/gu_int_rate7_base.html'
