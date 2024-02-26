@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import csv
 
 url = 'https://www.nw-life.co.jp/product/annuities/rate/gu_int_rate.html'
 #url = 'https://www.nw-life.co.jp/product/annuities/rate/gu_int_rate_base.html'
@@ -25,5 +26,6 @@ for table in tables:
         cols = [col.text.strip() for col in cols]
         data.append(cols)
 
-for d in data:
-    print(d)
+with open('data/nw1.csv', 'w') as f:
+    writer = csv.writer(f)
+    writer.writerows(data)
