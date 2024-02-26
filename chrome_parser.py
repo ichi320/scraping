@@ -17,3 +17,7 @@ def get_html(url):
     soup = BeautifulSoup(html, 'html.parser')
 
     return soup
+
+if __name__ == '__main__':
+    soup = get_html('https://www.google.com/')
+    print(soup)
