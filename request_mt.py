@@ -11,7 +11,7 @@ def get_table(soup):
     for table in tables:
         rows = table.find_all('tr')
         for row in rows:
-            cols = row.find_all(['th', 'span'])
+            cols = row.find_all(['th', 'td'])
             cols = [col.text.strip() for col in cols]
             data.append(cols)
     return data
@@ -38,6 +38,21 @@ if __name__ == '__main__':
     output.append(data[5])
     output.append([product_names[2]])
     output.append(data[7])
+    output.append([])
+
+    url = 'https://www.metlife.co.jp/lf1/ahp750/08.html'
+    soup = get_html(url)
+    data = []
+    data = get_table(soup)
+
+    output.append(['ビー ウィズ ユー プラスⅡ'])
+    output.append(['健康告知あり'])
+    output.append(data[2])
+    output.append(['健康告知なし'])
+    output.append(data[4])
+    output.append([])
+    
+
     '''
     for d in data:
         print(d)
