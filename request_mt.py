@@ -6,7 +6,7 @@ from chrome_parser import get_html
 
 def get_table(soup):
     data = []
-    data.append(soup.find('title').string)
+    data.append(soup.find('title'))
     tables = soup.select('.defaultTable')
     for table in tables:
         rows = table.find_all('tr')
@@ -18,7 +18,7 @@ def get_table(soup):
 #r = requests.get(url)
 #soup = BeautifulSoup(r.content, 'html.parser')
 
-if __name__ == '__main__':
+def submit():
     url = 'https://www.metlife.co.jp/lf1/ahp664/p664_08.html'
     soup = get_html(url)
     data = []
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     output.append(['健康告知なし'])
     output.append(data[4])
     output.append([])
-    
+
 
     '''
     for d in data:
@@ -66,3 +66,6 @@ if __name__ == '__main__':
     with open('data/mt1.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerows(output)
+
+if __name__ == '__main__':
+    submit()

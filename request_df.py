@@ -140,11 +140,7 @@ def sutori4():
     output.append([])
     return output
 
-
-
-if __name__ == '__main__':
-#    print(jani())
-
+def submit():
     with open('data/df1.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerows(purekare2())
@@ -157,3 +153,8 @@ if __name__ == '__main__':
         writer.writerows(sisurendo2())
         writer.writerows(purepure3())
         writer.writerows(sutori4())
+
+
+if __name__ == '__main__':
+#    print(jani())
+    submit()
