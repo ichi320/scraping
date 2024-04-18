@@ -3,4 +3,5 @@
 /.venv/
 /data/
 /data_cp932/
+/data_aligned/
 /__pycache__/
