@@ -2,6 +2,7 @@
 .idea
 /.venv/
 /data/
+/data_aligned/
 /data_cp932/
 /data_aligned/
 /__pycache__/
