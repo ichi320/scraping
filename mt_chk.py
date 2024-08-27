@@ -1,10 +1,13 @@
 import time
+
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
-# coding: UTF-8
-def get_html(url, t=1):
+def get_html(url):
+    # coding: UTF-8
     # ブラウザのオプションを格納する変数をもらってきます。
     options = Options()
     # Headlessモードを有効にする（コメントアウトするとブラウザが実際に立ち上がります）
@@ -13,7 +16,9 @@ def get_html(url, t=1):
     driver = webdriver.Chrome(options=options)
     # ブラウザでアクセスする
     driver.get(url)
-    time.sleep(t)
+    #driver.implicitly_wait(10)
+    time.sleep(5)
+
     # HTMLを文字コードをUTF-8に変換してから取得します。
     html = driver.page_source.encode('utf-8')
     soup = BeautifulSoup(html, 'html.parser')
@@ -21,5 +26,6 @@ def get_html(url, t=1):
     return soup
 
 if __name__ == '__main__':
-    soup = get_html('https://www.google.com/')
+    url = 'https://www.metlife.co.jp/lf1/ahp750/08.html'
+    soup = get_html(url)
     print(soup)

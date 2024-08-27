@@ -3,7 +3,8 @@ import shutil
 
 def align_mt():
     new_path = shutil.copy('./data/mt1.csv', './data_aligned/')
-    print(new_path)
+def align_my():
+    new_path = shutil.copy('./data/my1.csv', './data_aligned/')
 
 def align_df():
     contents = []
@@ -51,6 +52,7 @@ def main():
     align_df()
     align_mt()
     align_nw()
+    align_my()
 
 
 if __name__ == '__main__':

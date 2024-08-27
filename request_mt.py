@@ -23,7 +23,6 @@ def submit():
     soup = get_html(url)
     data = []
     data = get_table(soup)
-
     product_names = []
     names = soup.select('#H5Exchange01')
     for name in names:
@@ -41,15 +40,19 @@ def submit():
     output.append([])
 
     url = 'https://www.metlife.co.jp/lf1/ahp750/08.html'
-    soup = get_html(url)
+    soup = get_html(url, 5)
     data = []
     data = get_table(soup)
 
     output.append(['ビー ウィズ ユー プラスⅡ'])
     output.append(['健康告知あり'])
     output.append(data[2])
-    output.append(['健康告知なし'])
     output.append(data[4])
+    output.append(data[5])
+    output.append(['健康告知なし'])
+    output.append(data[7])
+    output.append(data[8])
+    output.append(data[9])
     output.append([])
 
 
